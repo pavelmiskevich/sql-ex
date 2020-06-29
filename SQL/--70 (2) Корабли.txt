@@ -1,9 +1,9 @@
-Укажите сражения, в которых участвовало по меньшей мере три корабля одной и той же страны.
-Предложение GROUP BY
-Внешние соединения
-Предложение HAVING
+вЂќРєР°Р¶РёС‚Рµ СЃСЂР°Р¶РµРЅРёВ¤, РІ РєРѕС‚РѕСЂС‹С… СѓС‡Р°СЃС‚РІРѕРІР°Р»Рѕ РїРѕ РјРµРЅСЊС€РµР№ РјРµСЂРµ С‚СЂРё РєРѕСЂР°Р±Р»В¤ РѕРґРЅРѕР№ Рё С‚РѕР№ Р¶Рµ СЃС‚СЂР°РЅС‹.
+С•СЂРµРґР»РѕР¶РµРЅРёРµ GROUP BY
+В¬РЅРµС€РЅРёРµ СЃРѕРµРґРёРЅРµРЅРёВ¤
+С•СЂРµРґР»РѕР¶РµРЅРёРµ HAVING
 ------------------------------------------------------------------------
--- сражения, в которых участвовало по меньшей мере три корабля
+-- СЃСЂР°Р¶РµРЅРёВ¤, РІ РєРѕС‚РѕСЂС‹С… СѓС‡Р°СЃС‚РІРѕРІР°Р»Рѕ РїРѕ РјРµРЅСЊС€РµР№ РјРµСЂРµ С‚СЂРё РєРѕСЂР°Р±Р»В¤
 select o.battle, count(o.ship) from Outcomes o
 group by o.battle
 having count(o.ship) >= 3
@@ -53,7 +53,7 @@ where o.ship NOT IN (select name from Ships)
 group by r.country, r.battle
 having count(r.ship) >= 3
 
--- union с подсчетом кораблей
+-- union СЃ РїРѕРґСЃС‡РµС‚РѕРј РєРѕСЂР°Р±Р»РµР№
 select r.battle from (
 select distinct t.country, t.battle, t.ship from (
 select c.country, o.battle, o.ship from Outcomes o
@@ -73,7 +73,7 @@ where o.ship NOT IN (select name from Ships) and c.country IS NOT NULL
 group by r.country, r.battle
 having count(r.ship) >= 3
 
--- union all с подсчетом стран
+-- union all СЃ РїРѕРґСЃС‡РµС‚РѕРј СЃС‚СЂР°РЅ
 select r.battle from (
 select c.country, o.battle from Outcomes o
 join Ships s on o.ship = s.name
@@ -90,7 +90,7 @@ where o.ship NOT IN (select name from Ships)
 group by r.country, r.battle
 having count(*) >= 3
 
--- Попробовать FULL JOIN
+-- С•РѕРїСЂРѕР±РѕРІР°С‚СЊ FULL JOIN
 
 ------------------------------------------------------------------------
 -- GIT HUB
