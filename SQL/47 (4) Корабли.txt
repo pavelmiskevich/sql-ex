@@ -1,0 +1,91 @@
+Определить страны, которые потеряли в сражениях все свои корабли.
+------------------------------------------------------------------------
+select cl.country, sh.name from Classes cl
+join Ships sh on cl.class = sh.class
+join Outcomes ou on ou.ship = sh.name and ou.result = 'sunk'
+where 
+union all
+
+select distinct cl.country, ou.ship from Classes cl
+join Outcomes ou on ou.ship = cl.class and ou.result = 'sunk'
+
+select cl.country, sh.name, ou.result from Classes cl
+join Ships sh on cl.class = sh.class
+join Outcomes ou on ou.ship = sh.name and ou.result <> 'sunk'
+select ou.ship from Outcomes ou where ou.result = 'sunk'
+
+
+select cl.country, sh.name, 'sunk' from Classes cl
+join Ships sh on cl.class = sh.class
+--join Outcomes ou on ou.ship = sh.name
+where sh.name IN (select ou.ship from Outcomes ou where ou.result = 'sunk')
+union all
+select distinct cl.country, ou.ship, 'sunk' from Classes cl
+join Outcomes ou on ou.ship = cl.class --and ou.result = 'sunk'
+where ou.ship IN (select ou.ship from Outcomes ou where ou.result = 'sunk')
+
+
+select distinct cl.country, sh.name from Classes cl
+join Ships sh on cl.class = sh.class
+join Outcomes ou on ou.ship = sh.name and ou.result = 'sunk'
+--left join Outcomes ou2 on ou.ship = sh.name and ou.result <> 'sunk'
+group by cl.country, sh.name
+having count(sh.name) = count(ou.result)
+union all
+select distinct cl.country, ou.ship from Classes cl
+join Outcomes ou on ou.ship = cl.class and ou.result = 'sunk'
+
+
+
+select allsh.country, count(allsh.name), count(ssh.name) from (
+select cl.country, count(sh.name) from Classes cl
+join Ships sh on cl.class = sh.class
+group by cl.country
+union all
+select distinct cl.country, count(ou.ship) from Classes cl
+join Outcomes ou on ou.ship = cl.class and ou.ship NOT IN (select sh.Name from Ships sh)
+group by cl.country
+) allsh
+join (
+select distinct cl.country, count(sh.name) from Classes cl
+join Ships sh on cl.class = sh.class
+join Outcomes ou on ou.ship = sh.name and ou.result = 'sunk'
+group by cl.country
+union all
+select distinct cl.country, count(ou.ship) from Classes cl
+join Outcomes ou on ou.ship = cl.class and ou.result = 'sunk' and ou.ship NOT IN (select sh.Name from Ships sh)
+group by cl.country
+) ssh on allsh.country = ssh.country
+
+
+
+
+------------------------------------------------------------------------
+select distinct allsh.country from (
+select country, count(name) as 'c' from (
+select distinct cl.country, sh.name as 'name' from Classes cl
+join Ships sh on cl.class = sh.class
+--group by cl.country
+union
+select distinct cl.country, ou.ship as 'name' from Classes cl
+join Outcomes ou on ou.ship = cl.class and ou.ship NOT IN (select sh.Name from Ships sh)
+--group by cl.country
+) allsh
+group by allsh.country
+) allsh
+join (
+select country, count(name) as 'c' from (
+select distinct cl.country, sh.name from Classes cl
+join Ships sh on cl.class = sh.class
+join Outcomes ou on ou.ship = sh.name and ou.result = 'sunk'
+--group by cl.country
+union
+select distinct cl.country, ou.ship from Classes cl
+join Outcomes ou on ou.ship = cl.class and ou.result = 'sunk' and ou.ship NOT IN (select sh.Name from Ships sh)
+--group by cl.country
+) ssh
+group by ssh.country
+) ssh on allsh.country = ssh.country
+where allsh.c = ssh.c
+
+

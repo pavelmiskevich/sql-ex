@@ -1,0 +1,25 @@
+Найдите производителей самых дешевых цветных принтеров. Вывести: maker, price
+Явные операции соединения
+Получение итоговых значений
+Подзапросы
+-- Процесс -------------------------------------------------------------
+
+-- Решение -------------------------------------------------------------
+select distinct pr.maker, pri.price from Product pr
+join Printer pri on pr.model = pri.model
+where pri.color = 'y' and pri.price = (select min(price) from Printer where color = 'y')
+
+-- GIT HUB
+SELECT distinct Product.maker, Printer.price 
+FROM Product
+INNER JOIN Printer On Printer.model = Product.model
+where Printer.price = (SELECT MIN(price) FROM Printer WHERE Printer.color = 'y') 
+AND Printer.color = 'y'
+
+SELECT DISTINCT product.maker, printer.price 
+    FROM product, printer 
+    WHERE product.model = printer.model 
+      AND printer.color = 'y' 
+      AND printer.price = (SELECT MIN(price) 
+                               FROM printer 
+                               WHERE printer.color = 'y')

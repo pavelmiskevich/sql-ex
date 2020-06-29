@@ -1,0 +1,103 @@
+”кажите сражени€, в которых участвовало по меньшей мере три корабл€ одной и той же страны.
+ѕредложение GROUP BY
+¬нешние соединени€
+ѕредложение HAVING
+------------------------------------------------------------------------
+-- сражени€, в которых участвовало по меньшей мере три корабл€
+select o.battle, count(o.ship) from Outcomes o
+group by o.battle
+having count(o.ship) >= 3
+
+select c.country, o.battle, count(o.ship) from Outcomes o
+join Ships s on o.ship = s.name
+join Classes c on c.class = s.class
+group by c.country, o.battle
+having count(o.ship) >= 3
+union all
+select c.country, o.battle, count(o.ship) from Outcomes o
+join Classes c on o.ship = c.class and o.ship NOT IN (select name from Ships)
+group by c.country, o.battle
+having count(o.ship) >= 3
+
+select r.battle from (
+select c.country, o.battle, o.ship from Outcomes o
+join Ships s on o.ship = s.name
+join Classes c on c.class = s.class --OR on c.class = s.name
+--group by c.country, o.battle
+--having count(o.ship) >= 3
+union all
+select c.country, o.battle, o.ship from Outcomes o
+join Classes c on o.ship = c.class
+where o.ship NOT IN (select name from Ships)
+--group by c.country, o.battle
+--having count(o.ship) >= 3
+) r
+group by r.country, r.battle
+having count(r.ship) >= 3
+
+select r.battle from (
+select distinct t.country, t.battle, t.ship from (
+select c.country, o.battle, o.ship from Outcomes o
+join Ships s on o.ship = s.name
+join Classes c on c.class = s.class --OR on c.class = s.name
+--group by c.country, o.battle
+--having count(o.ship) >= 3
+union all
+select c.country, o.battle, o.ship from Outcomes o
+join Classes c on o.ship = c.class
+where o.ship NOT IN (select name from Ships)
+--group by c.country, o.battle
+--having count(o.ship) >= 3
+) t
+) r
+group by r.country, r.battle
+having count(r.ship) >= 3
+
+-- union с подсчетом кораблей
+select r.battle from (
+select distinct t.country, t.battle, t.ship from (
+select c.country, o.battle, o.ship from Outcomes o
+join Ships s on o.ship = s.name
+join Classes c on c.class = s.class --OR on c.class = s.name
+where c.country IS NOT NULL
+--group by c.country, o.battle
+--having count(o.ship) >= 3
+union
+select c.country, o.battle, o.ship from Outcomes o
+join Classes c on o.ship = c.class
+where o.ship NOT IN (select name from Ships) and c.country IS NOT NULL
+--group by c.country, o.battle
+--having count(o.ship) >= 3
+) t
+) r
+group by r.country, r.battle
+having count(r.ship) >= 3
+
+-- union all с подсчетом стран
+select r.battle from (
+select c.country, o.battle from Outcomes o
+join Ships s on o.ship = s.name
+join Classes c on c.class = s.class --OR on c.class = s.name
+--group by c.country, o.battle
+--having count(o.ship) >= 3
+union all
+select c.country, o.battle from Outcomes o
+join Classes c on o.ship = c.class
+where o.ship NOT IN (select name from Ships)
+--group by c.country, o.battle
+--having count(o.ship) >= 3
+) r
+group by r.country, r.battle
+having count(*) >= 3
+
+-- ѕопробовать FULL JOIN
+
+------------------------------------------------------------------------
+-- GIT HUB
+SELECT DISTINCT Outcomes.battle 
+FROM Outcomes 
+LEFT JOIN Ships ON Ships.name = Outcomes.ship 
+LEFT JOIN Classes ON Outcomes.ship = Classes.class OR Ships.class = Classes.class 
+WHERE Classes.country IS NOT NULL 
+GROUP BY Classes.country, Outcomes.battle 
+HAVING COUNT(Outcomes.ship) >= 3

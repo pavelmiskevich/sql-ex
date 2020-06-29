@@ -1,0 +1,27 @@
+Найдите номера моделей и цены всех имеющихся в продаже продуктов (любого типа) производителя B (латинская буква).
+Объединение
+Явные операции соединения
+-- Процесс -------------------------------------------------------------
+
+-- Решение -------------------------------------------------------------
+select distinct PC.model, PC.price from Product
+join PC on Product.model = PC.model
+where maker = 'B'
+union
+select distinct Laptop.model, Laptop.price from Product
+join Laptop on Product.model = Laptop.model
+where maker = 'B'
+union
+select distinct Printer.model, Printer.price from Product
+join Printer on Product.model = Printer.model
+where maker = 'B'
+
+-- GIT HUB
+SELECT DISTINCT product.model, pc.price 
+    FROM Product JOIN pc ON product.model = pc.model WHERE maker = 'B' 
+    UNION 
+    SELECT DISTINCT product.model, laptop.price 
+        FROM product JOIN laptop ON product.model = laptop.model WHERE maker = 'B' 
+        UNION 
+        SELECT DISTINCT product.model, printer.price 
+            FROM product JOIN printer ON product.model = printer.model WHERE maker = 'B'; 

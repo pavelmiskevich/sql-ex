@@ -1,0 +1,26 @@
+Определить имена разных пассажиров, когда-либо летевших на одном и том же месте более одного раза.
+
+------------------------------------------------------------------------
+
+select pit.ID_psg, count(pit.place) from Pass_in_trip pit
+group by pit.ID_psg
+having count(pit.place) > 1
+--join Pass_in_trip pit on pit.ID_psg = p.ID_psg
+
+select pit.ID_psg, pit.trip_no, pit.place from Pass_in_trip pit
+
+select p.name from Passenger p
+join (
+select pit.ID_psg, pit.place, count(pit.trip_no) from Pass_in_trip pit
+group by pit.ID_psg, pit.place
+having count(pit.trip_no) > 1
+) pp on p.ID_psg = pp.ID_psg
+
+------------------------------------------------------------------------
+
+select p.name from Passenger p
+where p.ID_psg IN (
+select pit.ID_psg from Pass_in_trip pit
+group by pit.ID_psg, pit.place
+having count(pit.trip_no) > 1
+)

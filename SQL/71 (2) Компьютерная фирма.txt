@@ -1,0 +1,60 @@
+Найти тех производителей ПК, все модели ПК которых имеются в таблице PC.
+ Предикат IN
+ Реляционное деление
+------------------------------------------------------------------------
+SELECT maker
+FROM Product
+GROUP BY maker
+HAVING COUNT(DISTINCT type) = 
+            (SELECT COUNT(DISTINCT type) FROM Product);
+
+SELECT maker
+FROM Product
+WHERE type = 'PC'
+GROUP BY maker
+HAVING COUNT(DISTINCT type) = 1
+            --(SELECT COUNT(DISTINCT type) FROM Product)
+
+
+SELECT distinct maker
+FROM Product p
+WHERE type NOT IN ('Laptop', 'Printer') AND p.model  IN (select model from PC)
+
+SELECT distinct p.*, pc.*, l.*
+FROM Product p
+left join PC pc on p.model = pc.model
+left join Laptop l on p.model = l.model
+WHERE p.model  = ANY (select model from PC)
+
+SELECT DISTINCT p.*
+FROM Product p
+WHERE p.type = 'PC' AND NOT EXISTS (
+SELECT model
+    FROM PC 
+    WHERE model NOT IN 
+              (SELECT model 
+                FROM Product p2 
+                WHERE p.model = p2.model
+              )
+)
+
+
+------------------------------------------------------------------------
+SELECT DISTINCT p.maker
+FROM Product p
+WHERE p.type = 'PC' AND NOT EXISTS (
+SELECT p2.maker
+    FROM Product p2
+    WHERE p2.maker = p.maker AND p2.type = 'PC' AND model NOT IN 
+              (SELECT model 
+                FROM PC
+              )
+)
+
+-- GIT HUB
+SELECT Product.maker 
+FROM Product
+LEFT JOIN PC ON PC.model = Product.model 
+WHERE Product.type = 'PC' 
+GROUP BY Product.maker 
+HAVING COUNT(Product.model) = COUNT(PC.model)

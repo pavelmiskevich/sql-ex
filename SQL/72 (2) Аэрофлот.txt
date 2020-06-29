@@ -1,0 +1,59 @@
+Среди тех, кто пользуется услугами только какой-нибудь одной компании, определить имена разных пассажиров, летавших чаще других.
+Вывести: имя пассажира и число полетов.
+Явные операции соединения
+Предложение GROUP BY
+Подзапросы
+Предложение HAVING
+
+------------------------------------------------------------------------
+SELECT pit.ID_psg, count(t.ID_Comp) from Pass_in_trip pit
+join Passenger p on pit.ID_psg = p.ID_psg
+join Trip t on pit.trip_no = t.trip_no
+GROUP BY pit.ID_psg
+HAVING count(t.ID_Comp) = 1
+2, 9, 12
+14, 37
+
+SELECT pit.ID_psg, count(t.ID_Comp) from Pass_in_trip pit
+join Passenger p on pit.ID_psg = p.ID_psg
+join Trip t on pit.trip_no = t.trip_no
+GROUP BY pit.ID_psg
+
+-- летающие одной компанией
+SELECT r.ID_psg FROM (
+SELECT DISTINCT pit.ID_psg, t.ID_Comp from Pass_in_trip pit
+join Trip t on pit.trip_no = t.trip_no
+) r
+GROUP BY r.ID_psg
+HAVING COUNT(r.ID_Comp) = 1
+
+SELECT TOP(1) WITH TIES p.name
+
+
+------------------------------------------------------------------------
+SELECT TOP 1 WITH TIES p.name, f.count from (
+SELECT pit.ID_psg, COUNT(pit.trip_no) count from Pass_in_trip pit
+WHERE pit.ID_psg IN (
+SELECT r.ID_psg FROM (
+SELECT DISTINCT pit.ID_psg, t.ID_Comp from Pass_in_trip pit
+join Trip t on pit.trip_no = t.trip_no
+) r
+GROUP BY r.ID_psg
+HAVING COUNT(r.ID_Comp) = 1
+)
+GROUP BY pit.ID_psg
+) f
+join Passenger p on f.ID_psg = p.ID_psg
+ORDER BY f.count DESC
+
+-- GIT HUB
+SELECT TOP 1 WITH TIES name, maxs FROM passenger
+INNER JOIN (
+	SELECT passengerID, max(counts) maxs FROM ( 
+		SELECT pass_in_trip.ID_psg passengerID, Trip.ID_comp, count(*) counts FROM pass_in_trip
+		INNER JOIN trip ON trip.trip_no = pass_in_trip.trip_no
+		GROUP BY pass_in_trip.ID_psg, Trip.ID_comp
+	) AS R GROUP BY passengerID HAVING count(*) = 1
+) AS R1 ON ID_psg = passengerID ORDER BY maxs DESC
+
+

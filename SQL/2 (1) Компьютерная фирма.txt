@@ -1,0 +1,9 @@
+Найдите производителей принтеров. Вывести: maker
+Простой оператор SELECT
+-- Процесс -------------------------------------------------------------
+
+-- Решение -------------------------------------------------------------
+select distinct maker from Product where type = 'Printer'
+
+-- GIT HUB
+SELECT maker FROM Product WHERE type = 'Printer' GROUP BY maker
