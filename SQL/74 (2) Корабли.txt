@@ -14,11 +14,11 @@ join Outcomes o ON c.class = o. ship
 where o.ship NOT IN (select name from Ships)
 -- Решение -------------------------------------------------------------
 select c.country, c.class from Classes c WHERE c.country = 'RUSSIA'
-union
+union all
 select c.country, c.class from Classes c WHERE NOT EXISTS (select c.country, c.class from Classes c WHERE c.country = 'RUSSIA')
 
-cost	0.018552929162979
-operations	7
+cost	0.012830056250095
+operations	6
 
 -- GIT HUB
 SELECT Classes.country, Classes.class 
