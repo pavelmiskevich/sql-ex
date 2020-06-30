@@ -1,4 +1,4 @@
-Найдите производителей, выпускающих по меньшей мере три различных модели ПК. Вывести: Maker, число моделей ПК.
+﻿Найдите производителей, выпускающих по меньшей мере три различных модели ПК. Вывести: Maker, число моделей ПК.
 Предложение GROUP BY
 Предложение HAVING
 -- Процесс -------------------------------------------------------------
@@ -21,6 +21,3 @@ SELECT maker, COUNT(model)
     WHERE type = 'pc' 
     GROUP BY product.maker 
     HAVING COUNT (DISTINCT model) >= 3
-
-https://github.com/v-a-kernel/sql-ex
-https://github.com/geekellan/sql-ex

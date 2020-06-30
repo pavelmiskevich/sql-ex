@@ -1,0 +1,25 @@
+Найдите производителей, которые производили бы как ПК
+со скоростью не менее 750 МГц, так и ПК-блокноты со скоростью не менее 750 МГц.
+Вывести: Maker
+    Явные операции соединения
+    Пересечение и разность
+-- Процесс -------------------------------------------------------------
+select pr.maker from Product pr
+left join PC pc on pc.model = pr.model
+join Laptop lp on lp.model = pr.model
+where pc.speed >= 750 and lp.speed >=750
+
+-- Решение -------------------------------------------------------------
+select distinct t1.maker from (select pr.maker from Product pr
+join PC pc on pc.model = pr.model where pc.speed >= 750) t1
+join (select pr.maker from Product pr
+join Laptop lp on lp.model = pr.model where lp.speed >=750
+) t2 on t2.maker = t1.maker
+
+-- GIT HUB
+SELECT DISTINCT maker 
+    FROM product t1 JOIN pc t2 ON t1.model = t2.model 
+    WHERE speed >= 750 
+      AND maker IN (SELECT maker 
+                        FROM product t1 JOIN laptop t2 ON t1.model = t2.model 
+                        WHERE speed >= 750)

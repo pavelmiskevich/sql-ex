@@ -1,0 +1,34 @@
+Найдите среднюю цену ПК и ПК-блокнотов, выпущенных производителем A (латинская буква). Вывести: одна общая средняя цена.
+    Явные операции соединения
+    Подзапросы
+    Объединение
+    Получение итоговых значений
+-- Процесс -------------------------------------------------------------
+
+-- Решение -------------------------------------------------------------
+select avg(av.price) AVG_price from (
+select pc.price price from PC pc
+join Product pr on pr.model = pc.model
+where pr.maker = 'A'
+union all
+select lp.price price from Laptop lp
+join Product pr on pr.model = lp.model
+where pr.maker = 'A'
+) av
+
+
+-- GIT HUB
+SELECT sum(s.price)/sum(s._quantity) as _average 
+    FROM (SELECT price, 1 as _quantity FROM pc, product 
+              WHERE pc.model = product.model 
+                AND product.maker = 'A' 
+            UNION all 
+            SELECT price, 1 as _quantity FROM laptop, product 
+              WHERE laptop.model = product.model 
+                AND product.maker = 'A'
+          ) as s;
+		  
+select sum(s.sum)/sum(s.kol)
+from (select price as sum, 1 as kol from PC, Product where Product.model = PC.model and Product.maker = 'A'
+	UNION ALL
+	select price as sum, 1 as kol from Laptop, Product where Product.model = Laptop.model and Product.maker = 'A') as s

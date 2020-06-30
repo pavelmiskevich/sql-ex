@@ -1,0 +1,63 @@
+Перечислите номера моделей любых типов, имеющих самую высокую цену по всей имеющейся в базе данных продукции.
+    Объединение
+    Получение итоговых значений
+    Подзапросы
+    CTE
+-- Процесс -------------------------------------------------------------
+
+-- Решение -------------------------------------------------------------
+select model from PC where price = (
+select max(u.price) from (
+select model, price from PC where price = (
+select max(price) from PC )
+union
+select model, price from Laptop where price = (
+select max(price) from Laptop )
+union
+select model, price from Printer where price = (
+select max(price) from Printer ) 
+) u
+)
+union
+select model from Laptop where price = (
+select max(u.price) from (
+select model, price from PC where price = (
+select max(price) from PC )
+union
+select model, price from Laptop where price = (
+select max(price) from Laptop )
+union
+select model, price from Printer where price = (
+select max(price) from Printer ) 
+) u
+)
+union
+select model from Printer where price = (
+select max(u.price) from (
+select model, price from PC where price = (
+select max(price) from PC )
+union
+select model, price from Laptop where price = (
+select max(price) from Laptop )
+union
+select model, price from Printer where price = (
+select max(price) from Printer ) 
+) u
+)
+
+-- GIT HUB
+SELECT model 
+    FROM (SELECT model, price FROM pc 
+          UNION 
+          SELECT model, price FROM Laptop 
+          UNION 
+          SELECT model, price FROM Printer
+          ) t1 
+    WHERE price = (SELECT MAX(price) 
+                       FROM (SELECT price FROM pc 
+                             UNION 
+                             SELECT price FROM Laptop 
+                             UNION 
+                             SELECT price FROM Printer
+                             ) t2 
+                   )

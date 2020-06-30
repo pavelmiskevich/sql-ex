@@ -1,0 +1,35 @@
+В предположении, что приход и расход денег на каждом пункте приема фиксируется произвольное число раз (первичным ключом в таблицах является столбец code), требуется получить таблицу, в которой каждому пункту за каждую дату выполнения операций будет соответствовать одна строка.
+Вывод: point, date, суммарный расход пункта за день (out), суммарный приход пункта за день (inc). Отсутствующие значения считать неопределенными (NULL).
+    Предложение GROUP BY
+    Внешние соединения
+    Объединение
+-- Процесс -------------------------------------------------------------
+
+-- Решение -------------------------------------------------------------
+select distinct
+	isnull(i.point, o.point) point,
+	isnull(i.date, o.date) date,
+	(select sum(out) from Outcome where point = isnull(i.point, o.point) and date = isnull(i.date, o.date)) out,
+	(select sum(inc) from Income where point = isnull(i.point, o.point) and date = isnull(i.date, o.date)) inc
+from (select point, [date] from Income) i
+full join (select point, [date] from Outcome) o on i.point = o.point and i.date = o.date
+
+-- GIT HUB
+SELECT point, date, SUM(sum_out), SUM(sum_inc) 
+    FROM ( SELECT point, date, SUM(inc) as sum_inc, NULL as sum_out 
+               FROM Income GROUP BY point, date 
+             UNION 
+             SELECT point, date, NULL as sum_inc, SUM(out) as sum_out 
+                 FROM Outcome GROUP BY point, date 
+          ) as t 
+    GROUP BY point, date 
+    ORDER BY point ;
+	
+select point, date, sum(sumOut), sum(sumInc) 
+from( select point, date, sum(inc) as sumInc, null as sumOut from Income Group by point, date 
+Union 
+select point, date, null as sumInc, sum(out) as sumOut from Outcome Group by point, date ) as X
+group by point, date order by point
+
+https://github.com/v-a-kernel/sql-ex/tree/master/exercises_from_sql-ex.ru
+https://github.com/geekellan/sql-ex
