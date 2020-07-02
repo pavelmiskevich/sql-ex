@@ -1,0 +1,27 @@
+Из таблицы Outcome получить все записи за тот месяц (месяцы), с учетом года, в котором суммарное значение расхода (out) было максимальным.
+    Функция CONVERT
+    Получение итоговых значений
+    Предложение HAVING
+-- Процесс -------------------------------------------------------------
+
+-- Решение -------------------------------------------------------------
+SELECT ou.code, ou.point, ou.date, ou.out FROM Outcome ou
+join (
+SELECT TOP 1 WITH TIES t.month, t.year FROM (
+select MONTH(o.date) month, YEAR(o.date) year, SUM(o.out) sum from Outcome o
+group by MONTH(o.date), YEAR(o.date)
+) t
+order by t.sum DESC
+) f on f.month = MONTH(ou.date) AND f.year = YEAR(ou.date)
+
+cost	0.047639921307564
+operations	9
+
+-- GIT HUB
+SELECT Outcome.* FROM Outcome
+INNER JOIN (
+	SELECT TOP 1 WITH TIES YEAR(date) AS Year, MONTH(date) AS Month, SUM(out) AS ALL_TOTAL
+	FROM Outcome
+	GROUP BY YEAR(date), MONTH(date)
+	ORDER BY ALL_TOTAL DESC
+) R ON YEAR(Outcome.date) = R.Year AND MONTH(Outcome.date) = R.Month

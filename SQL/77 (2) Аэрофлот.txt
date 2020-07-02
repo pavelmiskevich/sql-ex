@@ -1,0 +1,40 @@
+Определить дни, когда было выполнено максимальное число рейсов из
+Ростова ('Rostov'). Вывод: число рейсов, дата.
+    Явные операции соединения
+    Получение итоговых значений
+------------------------------------------------------------------------
+select count(t.trip_no) Qty, t.date from (
+SELECT DISTINCT pit.date, pit.trip_no FROM Pass_in_trip pit
+join Trip tr on pit.trip_no = tr.trip_no AND town_from = 'Rostov'
+--group by pit.date
+) t
+group by t.date
+
+SELECT TOP 1 WITH TIES f.Qty, f.date FROM (
+select count(t.trip_no) Qty, t.date from (
+SELECT DISTINCT pit.date, pit.trip_no FROM Pass_in_trip pit
+join Trip tr on pit.trip_no = tr.trip_no AND town_from = 'Rostov'
+--group by pit.date
+) t
+group by t.date
+) f
+order by f.Qty DESC
+
+------------------------------------------------------------------------
+SELECT TOP 1 WITH TIES f.Qty, f.date FROM (
+select count(t.trip_no) Qty, t.date from (
+SELECT DISTINCT pit.date, pit.trip_no FROM Pass_in_trip pit
+join Trip tr on pit.trip_no = tr.trip_no AND town_from = 'Rostov'
+--group by pit.date
+) t
+group by t.date
+) f
+order by f.Qty DESC
+
+cost	0.032114550471306
+operations	9
+
+-- GIT HUB
+
+
+

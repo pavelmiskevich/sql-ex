@@ -1,0 +1,102 @@
+Определить время, проведенное в полетах, для пассажиров, летавших всегда на разных местах. Вывод: имя пассажира, время в минутах.
+    Явные операции соединения
+    Предложение GROUP BY
+    Предложение HAVING
+    Функция DATEDIFF
+------------------------------------------------------------------------
+select pit.ID_psg, pit.place, count(pit.trip_no), count(t.place) from Pass_in_trip pit
+join (select DISTINCT ID_psg, place from Pass_in_trip) t on t.ID_psg = pit.ID_psg
+group by pit.ID_psg, pit.place
+
+select t.ID_psg, t.trip_count, t2.place_count from (
+select pit.ID_psg, count(pit.trip_no) trip_count from Pass_in_trip pit
+group by pit.ID_psg
+) t
+join (
+select pit.ID_psg, count(pit.place) place_count from (select DISTINCT ID_psg, place from Pass_in_trip) pit
+group by pit.ID_psg
+) t2 on t2.ID_psg = t.ID_psg
+
+select t.ID_psg, t.trip_count, t2.place_count from (
+select pit.ID_psg, count(pit.trip_no) trip_count from Pass_in_trip pit
+group by pit.ID_psg
+) t
+join (
+select pit.ID_psg, count(pit.place) place_count from (select DISTINCT ID_psg, place from Pass_in_trip) pit
+group by pit.ID_psg
+) t2 on t2.ID_psg = t.ID_psg
+where t.trip_count = t2.place_count
+
+select pas.name, SUM(DATEDIFF(mi, time_out, time_in)) from Trip tr
+join Pass_in_trip pit on tr.trip_no = pit.trip_no
+join Passenger pas on pit.ID_psg = pas.ID_psg
+where pit.ID_psg IN (
+select t.ID_psg from (
+select pit.ID_psg, count(pit.trip_no) trip_count from Pass_in_trip pit
+group by pit.ID_psg
+) t
+join (
+select pit.ID_psg, count(pit.place) place_count from (select DISTINCT ID_psg, place from Pass_in_trip) pit
+group by pit.ID_psg
+) t2 on t2.ID_psg = t.ID_psg
+where t.trip_count = t2.place_count
+)
+group by pas.name
+
+select pas.name, 
+SUM(
+CASE   
+      WHEN time_out < time_in THEN DATEDIFF(mi, time_out, time_in)
+      WHEN time_out > time_in THEN DATEDIFF(mi, time_in, time_out)
+END
+)
+from Trip tr
+join Pass_in_trip pit on tr.trip_no = pit.trip_no
+join Passenger pas on pit.ID_psg = pas.ID_psg
+where pit.ID_psg IN (
+select t.ID_psg from (
+select pit.ID_psg, count(pit.trip_no) trip_count from Pass_in_trip pit
+group by pit.ID_psg
+) t
+join (
+select pit.ID_psg, count(pit.place) place_count from (select DISTINCT ID_psg, place from Pass_in_trip) pit
+group by pit.ID_psg
+) t2 on t2.ID_psg = t.ID_psg
+where t.trip_count = t2.place_count
+)
+group by pas.name
+
+
+Kevin Costner       	868
+
+select pas.name, 
+SUM(
+CASE   
+      WHEN time_out < time_in THEN DATEDIFF(mi, time_out, time_in)
+      WHEN time_out > time_in THEN 1440 - DATEDIFF(mi, time_in, time_out)
+END
+)
+from Trip tr
+join Pass_in_trip pit on tr.trip_no = pit.trip_no
+join Passenger pas on pit.ID_psg = pas.ID_psg
+where pit.ID_psg IN (
+select t.ID_psg from (
+select pit.ID_psg, count(pit.trip_no) trip_count from Pass_in_trip pit
+group by pit.ID_psg
+) t
+join (
+select pit.ID_psg, count(pit.place) place_count from (select DISTINCT ID_psg, place from Pass_in_trip) pit
+group by pit.ID_psg
+) t2 on t2.ID_psg = t.ID_psg
+where t.trip_count = t2.place_count
+)
+group by pas.name
+
+
+
+------------------------------------------------------------------------
+
+-- GIT HUB
+
+
+
