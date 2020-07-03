@@ -57,33 +57,33 @@ where ou.ship NOT IN (select name from Ships)
 select distinct sh.name from Ships sh
 join Classes cl on sh.class = cl.class
 join (
-select max(t.numGuns) numGuns, t.displacement from (
-select distinct cl.numGuns, cl.displacement from Ships sh
-join Classes cl on sh.class = cl.class
---group by cl.displacement
-union
-select distinct cl.numGuns, cl.displacement from Outcomes ou
-join Classes cl on ou.ship = cl.class
-where ou.ship NOT IN (select name from Ships)
---group by cl.displacement
-) t
-group by t.displacement
+	select max(t.numGuns) numGuns, t.displacement from (
+		select distinct cl.numGuns, cl.displacement from Ships sh
+		join Classes cl on sh.class = cl.class
+		--group by cl.displacement
+		union
+		select distinct cl.numGuns, cl.displacement from Outcomes ou
+		join Classes cl on ou.ship = cl.class
+		where ou.ship NOT IN (select name from Ships)
+		--group by cl.displacement
+	) t
+	group by t.displacement
 ) m on cl.numGuns = m.numGuns and cl.displacement = m.displacement
 union
 select distinct ou.ship from Outcomes ou
 join Classes cl on ou.ship = cl.class
 join (
-select max(t.numGuns) numGuns, t.displacement from (
-select distinct cl.numGuns, cl.displacement from Ships sh
-join Classes cl on sh.class = cl.class
---group by cl.displacement
-union
-select distinct cl.numGuns, cl.displacement from Outcomes ou
-join Classes cl on ou.ship = cl.class
-where ou.ship NOT IN (select name from Ships)
---group by cl.displacement
-) t
-group by t.displacement
+	select max(t.numGuns) numGuns, t.displacement from (
+		select distinct cl.numGuns, cl.displacement from Ships sh
+		join Classes cl on sh.class = cl.class
+		--group by cl.displacement
+		union
+		select distinct cl.numGuns, cl.displacement from Outcomes ou
+		join Classes cl on ou.ship = cl.class
+		where ou.ship NOT IN (select name from Ships)
+		--group by cl.displacement
+	) t
+	group by t.displacement
 ) m on cl.numGuns = m.numGuns and cl.displacement = m.displacement
 where ou.ship NOT IN (select name from Ships)
 
