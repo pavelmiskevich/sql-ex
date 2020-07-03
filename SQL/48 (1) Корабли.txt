@@ -1,0 +1,27 @@
+Найдите классы кораблей, в которых хотя бы один корабль был потоплен в сражении.
+    Явные операции соединения
+    Объединение
+-- Процесс -------------------------------------------------------------
+
+-- Решение -------------------------------------------------------------
+select distinct cl.class from Classes cl
+join (select distinct ship from Outcomes where result = 'sunk') m on cl.class = m.ship
+where cl.class not in (select distinct sh.class from Ships sh
+join (select distinct ship from Outcomes where result = 'sunk') m on sh.name = m.ship) and cl.class not in (select name from Ships)
+union all
+select distinct sh.class from Ships sh
+join (select distinct ship from Outcomes where result = 'sunk') m on sh.name = m.ship
+
+cost	0.048281621187925
+operations	17
+
+-- GIT HUB
+SELECT cl.class 
+  FROM Classes cl 
+  LEFT JOIN Ships s ON s.class = cl.class 
+ WHERE cl.class IN (SELECT ship FROM Outcomes WHERE result = 'sunk') OR 
+         s.name IN (SELECT ship FROM Outcomes WHERE result = 'sunk') 
+ GROUP BY cl.class;
+ 
+cost	0.032315377146006
+operations	8

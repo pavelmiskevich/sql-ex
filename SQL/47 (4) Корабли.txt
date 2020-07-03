@@ -1,5 +1,9 @@
 Определить страны, которые потеряли в сражениях все свои корабли.
-------------------------------------------------------------------------
+    Получение итоговых значений
+    Предложение GROUP BY
+    Объединение
+    Внешние соединения
+-- Процесс -------------------------------------------------------------
 select cl.country, sh.name from Classes cl
 join Ships sh on cl.class = sh.class
 join Outcomes ou on ou.ship = sh.name and ou.result = 'sunk'
@@ -56,11 +60,7 @@ select distinct cl.country, count(ou.ship) from Classes cl
 join Outcomes ou on ou.ship = cl.class and ou.result = 'sunk' and ou.ship NOT IN (select sh.Name from Ships sh)
 group by cl.country
 ) ssh on allsh.country = ssh.country
-
-
-
-
-------------------------------------------------------------------------
+-- Решение -------------------------------------------------------------
 select distinct allsh.country from (
 select country, count(name) as 'c' from (
 select distinct cl.country, sh.name as 'name' from Classes cl
@@ -87,5 +87,10 @@ join Outcomes ou on ou.ship = cl.class and ou.result = 'sunk' and ou.ship NOT IN
 group by ssh.country
 ) ssh on allsh.country = ssh.country
 where allsh.c = ssh.c
+
+cost	0.11918180435896
+operations	30
+
+-- GIT HUB
 
 
