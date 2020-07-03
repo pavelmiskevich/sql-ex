@@ -1,8 +1,8 @@
---Найдите названия кораблей, имеющих наибольшее число орудий среди всех имеющихся кораблей такого же водоизмещения (учесть корабли из таблицы Outcomes).
---    Явные операции соединения
---    Объединение
---    Предикаты ALL|ANY
--- Процесс -------------------------------------------------------------
+--РќР°Р№РґРёС‚Рµ РЅР°Р·РІР°РЅРёСЏ РєРѕСЂР°Р±Р»РµР№, РёРјРµСЋС‰РёС… РЅР°РёР±РѕР»СЊС€РµРµ С‡РёСЃР»Рѕ РѕСЂСѓРґРёР№ СЃСЂРµРґРё РІСЃРµС… РёРјРµСЋС‰РёС…СЃСЏ РєРѕСЂР°Р±Р»РµР№ С‚Р°РєРѕРіРѕ Р¶Рµ РІРѕРґРѕРёР·РјРµС‰РµРЅРёСЏ (СѓС‡РµСЃС‚СЊ РєРѕСЂР°Р±Р»Рё РёР· С‚Р°Р±Р»РёС†С‹ Outcomes).
+--    РЇРІРЅС‹Рµ РѕРїРµСЂР°С†РёРё СЃРѕРµРґРёРЅРµРЅРёСЏ
+--    РћР±СЉРµРґРёРЅРµРЅРёРµ
+--    РџСЂРµРґРёРєР°С‚С‹ ALL|ANY
+-- РџСЂРѕС†РµСЃСЃ -------------------------------------------------------------
 select distinct sh.name from Ships sh
 join Classes cl on sh.class = cl.class
 join (select max(numGuns) numGuns, displacement from Classes group by displacement) m on cl.numGuns = m.numGuns and cl.displacement = m.displacement
@@ -53,7 +53,7 @@ group by cl.displacement
 ) m on cl.numGuns = m.numGuns and cl.displacement = m.displacement
 where ou.ship NOT IN (select name from Ships)
 
--- Решение -------------------------------------------------------------
+-- Р РµС€РµРЅРёРµ -------------------------------------------------------------
 select distinct sh.name from Ships sh
 join Classes cl on sh.class = cl.class
 join (
