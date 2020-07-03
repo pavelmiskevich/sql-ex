@@ -1,7 +1,6 @@
 Укажите корабли, потопленные в сражениях в Северной Атлантике (North Atlantic). Вывод: ship.
     Простой оператор SELECT
     Предикаты (часть 1)
-
 -- Процесс -------------------------------------------------------------
 
 -- Решение -------------------------------------------------------------
@@ -15,6 +14,3 @@ operations	1
 SELECT o.ship 
     FROM battles b LEFT JOIN outcomes o ON o.battle = b.name 
     WHERE b.name = 'North Atlantic' AND o.result = 'sunk';
-	
-https://github.com/v-a-kernel/sql-ex/tree/master/exercises_from_sql-ex.ru
-https://github.com/geekellan/sql-ex

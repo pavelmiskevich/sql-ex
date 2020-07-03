@@ -1,0 +1,33 @@
+Найдите классы, в которые входит только один корабль из базы данных (учесть также корабли в Outcomes).
+    Объединение
+    Явные операции соединения
+    Предложение HAVING
+-- Процесс -------------------------------------------------------------
+
+-- Решение -------------------------------------------------------------
+select cl.class from Classes cl
+join Outcomes ou on cl.class = ou.ship
+where ou.ship not in (select name from Ships)
+and not exists (select 'x' from Ships where class = cl.class)
+union
+select cl.class from Classes cl
+join Ships sh on cl.class = sh.class
+group by cl.class
+having count(sh.name) = 1
+and not exists(select 'y' from Classes c
+join Outcomes ou on c.class = ou.ship
+where ou.ship not in (select name from Ships) and c.class = cl.class)
+
+cost	0.068220011889935
+operations	22
+
+-- GIT HUB
+SELECT c.class 
+    FROM classes c 
+        LEFT JOIN ( 
+            SELECT class, name FROM ships 
+            UNION 
+            SELECT ship, ship  FROM outcomes 
+        ) AS s ON s.class = c.class 
+    GROUP BY c.class 
+    HAVING COUNT(s.name) = 1;
