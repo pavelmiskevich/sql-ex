@@ -1,7 +1,7 @@
-Найти тех производителей ПК, все модели ПК которых имеются в таблице PC.
- Предикат IN
- Реляционное деление
-------------------------------------------------------------------------
+--Найти тех производителей ПК, все модели ПК которых имеются в таблице PC.
+--    Предикат IN
+--    Реляционное деление
+-- Процесс -------------------------------------------------------------
 SELECT maker
 FROM Product
 GROUP BY maker
@@ -37,9 +37,7 @@ SELECT model
                 WHERE p.model = p2.model
               )
 )
-
-
-------------------------------------------------------------------------
+-- Решение -------------------------------------------------------------
 SELECT DISTINCT p.maker
 FROM Product p
 WHERE p.type = 'PC' AND NOT EXISTS (
@@ -51,6 +49,9 @@ SELECT p2.maker
               )
 )
 
+--cost	0.031576130539179
+--operations	8
+
 -- GIT HUB
 SELECT Product.maker 
 FROM Product
@@ -58,3 +59,18 @@ LEFT JOIN PC ON PC.model = Product.model
 WHERE Product.type = 'PC' 
 GROUP BY Product.maker 
 HAVING COUNT(Product.model) = COUNT(PC.model)
+
+--cost	0.02772918343544
+--operations	7
+
+--FORUM
+--https://www.sql-ex.ru/forum/Lforum.php?F=3&N=71#20
+SELECT maker FROM (SELECT maker, model,
+CASE WHEN model IN (select model FROM PC) 
+THEN 1 ELSE 0 END as II FROM PRODUCT
+WHERE type='PC') x
+GROUP BY maker
+HAVING count(model)=SUM(II)
+
+--cost 0.022210285067558
+--operations 7
