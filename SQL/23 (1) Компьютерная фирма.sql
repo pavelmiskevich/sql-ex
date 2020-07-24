@@ -1,20 +1,22 @@
-ÐÐ°Ð¹Ð´Ð¸Ñ‚Ðµ Ð¿Ñ€Ð¾Ð¸Ð·Ð²Ð¾Ð´Ð¸Ñ‚ÐµÐ»ÐµÐ¹, ÐºÐ¾Ñ‚Ð¾Ñ€Ñ‹Ðµ Ð¿Ñ€Ð¾Ð¸Ð·Ð²Ð¾Ð´Ð¸Ð»Ð¸ Ð±Ñ‹ ÐºÐ°Ðº ÐŸÐš
-ÑÐ¾ ÑÐºÐ¾Ñ€Ð¾ÑÑ‚ÑŒÑŽ Ð½Ðµ Ð¼ÐµÐ½ÐµÐµ 750 ÐœÐ“Ñ†, Ñ‚Ð°Ðº Ð¸ ÐŸÐš-Ð±Ð»Ð¾ÐºÐ½Ð¾Ñ‚Ñ‹ ÑÐ¾ ÑÐºÐ¾Ñ€Ð¾ÑÑ‚ÑŒÑŽ Ð½Ðµ Ð¼ÐµÐ½ÐµÐµ 750 ÐœÐ“Ñ†.
-Ð’Ñ‹Ð²ÐµÑÑ‚Ð¸: Maker
-    Ð¯Ð²Ð½Ñ‹Ðµ Ð¾Ð¿ÐµÑ€Ð°Ñ†Ð¸Ð¸ ÑÐ¾ÐµÐ´Ð¸Ð½ÐµÐ½Ð¸Ñ
-    ÐŸÐµÑ€ÐµÑÐµÑ‡ÐµÐ½Ð¸Ðµ Ð¸ Ñ€Ð°Ð·Ð½Ð¾ÑÑ‚ÑŒ
--- ÐŸÑ€Ð¾Ñ†ÐµÑÑ -------------------------------------------------------------
+--Íàéäèòå ïðîèçâîäèòåëåé, êîòîðûå ïðîèçâîäèëè áû êàê ÏÊ
+--ñî ñêîðîñòüþ íå ìåíåå 750 ÌÃö, òàê è ÏÊ-áëîêíîòû ñî ñêîðîñòüþ íå ìåíåå 750 ÌÃö.
+--Âûâåñòè: Maker
+--    ßâíûå îïåðàöèè ñîåäèíåíèÿ
+--    Ïåðåñå÷åíèå è ðàçíîñòü
+-- Ïðîöåññ -------------------------------------------------------------
 select pr.maker from Product pr
 left join PC pc on pc.model = pr.model
 join Laptop lp on lp.model = pr.model
 where pc.speed >= 750 and lp.speed >=750
-
--- Ð ÐµÑˆÐµÐ½Ð¸Ðµ -------------------------------------------------------------
+-- Ðåøåíèå -------------------------------------------------------------
 select distinct t1.maker from (select pr.maker from Product pr
 join PC pc on pc.model = pr.model where pc.speed >= 750) t1
 join (select pr.maker from Product pr
 join Laptop lp on lp.model = pr.model where lp.speed >=750
 ) t2 on t2.maker = t1.maker
+
+--cost	0.032857276499271
+--operations	9
 
 -- GIT HUB
 SELECT DISTINCT maker 
@@ -23,3 +25,9 @@ SELECT DISTINCT maker
       AND maker IN (SELECT maker 
                         FROM product t1 JOIN laptop t2 ON t1.model = t2.model 
                         WHERE speed >= 750)
+
+--cost	0.036176130175591
+--operations	10
+
+--FORUM
+--https://www.sql-ex.ru/forum/Lforum.php?F=3&N=23#20
