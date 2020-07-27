@@ -45,7 +45,7 @@ join utB on utQ.Q_ID = utB.B_Q_ID and utB.B_Q_ID IN (
 -- GIT HUB
 
 --FORUM
---https://www.sql-ex.ru/forum/Lforum.php?F=3&N=91#20
+--https://www.sql-ex.ru/forum/Lforum.php?F=3&N=92#20
 SELECT (SELECT Q_NAME FROM utQ WHERE Q_ID = a.B_Q_ID) FROM (SELECT B_Q_ID FROM utB GROUP BY B_Q_ID HAVING SUM(B_VOL) = 765
 EXCEPT
 SELECT DISTINCT B_Q_ID FROM utB
