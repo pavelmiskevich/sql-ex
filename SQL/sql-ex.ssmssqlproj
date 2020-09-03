@@ -1,0 +1,712 @@
+<?xml version="1.0"?>
+<SqlWorkbenchSqlProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="sql-ex">
+  <Items>
+    <LogicalFolder Name="Connections" Type="2" Sorted="true">
+      <Items>
+        <ConnectionNode Name="192.168.158.34:sa">
+          <Created>2020-07-31T09:38:03.3378013+03:00</Created>
+          <Type>SQL</Type>
+          <Server>192.168.158.34</Server>
+          <UserName>sa</UserName>
+          <Authentication>SQL</Authentication>
+          <InitialDB>mercury</InitialDB>
+          <LoginTimeout>30</LoginTimeout>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
+        </ConnectionNode>
+        <ConnectionNode Name="ms-sql-8.in-solve.ru:1gb_miskevich">
+          <Created>2020-07-24T10:04:44.4214416+03:00</Created>
+          <Type>SQL</Type>
+          <Server>ms-sql-8.in-solve.ru</Server>
+          <UserName>1gb_miskevich</UserName>
+          <Authentication>SQL</Authentication>
+          <InitialDB>1gb_sql-ex</InitialDB>
+          <LoginTimeout>30</LoginTimeout>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName />
+        </ConnectionNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Queries" Type="0" Sorted="true">
+      <Items>
+        <FileNode Name="1 (1) Компьютерная фирма.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ms-sql-8.in-solve.ru:False:1gb_miskevich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ms-sql-8.in-solve.ru</AssociatedConnSrvName>
+          <AssociatedConnUserName>1gb_miskevich</AssociatedConnUserName>
+          <FullPath>1 (1) Компьютерная фирма.sql</FullPath>
+        </FileNode>
+        <FileNode Name="10 (1) Компьютерная фирма.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ms-sql-8.in-solve.ru:False:1gb_miskevich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ms-sql-8.in-solve.ru</AssociatedConnSrvName>
+          <AssociatedConnUserName>1gb_miskevich</AssociatedConnUserName>
+          <FullPath>10 (1) Компьютерная фирма.sql</FullPath>
+        </FileNode>
+        <FileNode Name="102 (2) Аэрофлот.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ms-sql-8.in-solve.ru:False:1gb_miskevich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ms-sql-8.in-solve.ru</AssociatedConnSrvName>
+          <AssociatedConnUserName>1gb_miskevich</AssociatedConnUserName>
+          <FullPath>102 (2) Аэрофлот.sql</FullPath>
+        </FileNode>
+        <FileNode Name="103 (2) Аэрофлот.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ms-sql-8.in-solve.ru:False:1gb_miskevich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ms-sql-8.in-solve.ru</AssociatedConnSrvName>
+          <AssociatedConnUserName>1gb_miskevich</AssociatedConnUserName>
+          <FullPath>103 (2) Аэрофлот.sql</FullPath>
+        </FileNode>
+        <FileNode Name="104 (2) Корабли.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ms-sql-8.in-solve.ru:False:1gb_miskevich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ms-sql-8.in-solve.ru</AssociatedConnSrvName>
+          <AssociatedConnUserName>1gb_miskevich</AssociatedConnUserName>
+          <FullPath>104 (2) Корабли.sql</FullPath>
+        </FileNode>
+        <FileNode Name="107 (2) Аэрофлот.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ms-sql-8.in-solve.ru:False:1gb_miskevich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ms-sql-8.in-solve.ru</AssociatedConnSrvName>
+          <AssociatedConnUserName>1gb_miskevich</AssociatedConnUserName>
+          <FullPath>107 (2) Аэрофлот.sql</FullPath>
+        </FileNode>
+        <FileNode Name="109 (2) Окраска.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ms-sql-8.in-solve.ru:False:1gb_miskevich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ms-sql-8.in-solve.ru</AssociatedConnSrvName>
+          <AssociatedConnUserName>1gb_miskevich</AssociatedConnUserName>
+          <FullPath>109 (2) Окраска.sql</FullPath>
+        </FileNode>
+        <FileNode Name="11 (1) Компьютерная фирма.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ms-sql-8.in-solve.ru:False:1gb_miskevich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ms-sql-8.in-solve.ru</AssociatedConnSrvName>
+          <AssociatedConnUserName>1gb_miskevich</AssociatedConnUserName>
+          <FullPath>11 (1) Компьютерная фирма.sql</FullPath>
+        </FileNode>
+        <FileNode Name="110 (2) Аэрофлот.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ms-sql-8.in-solve.ru:False:1gb_miskevich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ms-sql-8.in-solve.ru</AssociatedConnSrvName>
+          <AssociatedConnUserName>1gb_miskevich</AssociatedConnUserName>
+          <FullPath>110 (2) Аэрофлот.sql</FullPath>
+        </FileNode>
+        <FileNode Name="111 (2) Окраска.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ms-sql-8.in-solve.ru:False:1gb_miskevich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ms-sql-8.in-solve.ru</AssociatedConnSrvName>
+          <AssociatedConnUserName>1gb_miskevich</AssociatedConnUserName>
+          <FullPath>111 (2) Окраска.sql</FullPath>
+        </FileNode>
+        <FileNode Name="112 (3) Окраска.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ms-sql-8.in-solve.ru:False:1gb_miskevich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ms-sql-8.in-solve.ru</AssociatedConnSrvName>
+          <AssociatedConnUserName>1gb_miskevich</AssociatedConnUserName>
+          <FullPath>112 (3) Окраска.sql</FullPath>
+        </FileNode>
+        <FileNode Name="113 (2) Окраска.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ms-sql-8.in-solve.ru:False:1gb_miskevich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ms-sql-8.in-solve.ru</AssociatedConnSrvName>
+          <AssociatedConnUserName>1gb_miskevich</AssociatedConnUserName>
+          <FullPath>113 (2) Окраска.sql</FullPath>
+        </FileNode>
+        <FileNode Name="114 (2) Аэрофлот.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ms-sql-8.in-solve.ru:False:1gb_miskevich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ms-sql-8.in-solve.ru</AssociatedConnSrvName>
+          <AssociatedConnUserName>1gb_miskevich</AssociatedConnUserName>
+          <FullPath>114 (2) Аэрофлот.sql</FullPath>
+        </FileNode>
+        <FileNode Name="117 (2) Корабли.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ms-sql-8.in-solve.ru:False:1gb_miskevich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ms-sql-8.in-solve.ru</AssociatedConnSrvName>
+          <AssociatedConnUserName>1gb_miskevich</AssociatedConnUserName>
+          <FullPath>117 (2) Корабли.sql</FullPath>
+        </FileNode>
+        <FileNode Name="118 (2) Корабли.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ms-sql-8.in-solve.ru:False:1gb_miskevich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ms-sql-8.in-solve.ru</AssociatedConnSrvName>
+          <AssociatedConnUserName>1gb_miskevich</AssociatedConnUserName>
+          <FullPath>118 (2) Корабли.sql</FullPath>
+        </FileNode>
+        <FileNode Name="119 (2) Окраска.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ms-sql-8.in-solve.ru:False:1gb_miskevich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ms-sql-8.in-solve.ru</AssociatedConnSrvName>
+          <AssociatedConnUserName>1gb_miskevich</AssociatedConnUserName>
+          <FullPath>119 (2) Окраска.sql</FullPath>
+        </FileNode>
+        <FileNode Name="12 (1) Компьютерная фирма.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>12 (1) Компьютерная фирма.sql</FullPath>
+        </FileNode>
+        <FileNode Name="123 (2) Компьютерная фирма.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ms-sql-8.in-solve.ru:False:1gb_miskevich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ms-sql-8.in-solve.ru</AssociatedConnSrvName>
+          <AssociatedConnUserName>1gb_miskevich</AssociatedConnUserName>
+          <FullPath>123 (2) Компьютерная фирма.sql</FullPath>
+        </FileNode>
+        <FileNode Name="128 (2) Фирма вторсырья.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ms-sql-8.in-solve.ru:False:1gb_miskevich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ms-sql-8.in-solve.ru</AssociatedConnSrvName>
+          <AssociatedConnUserName>1gb_miskevich</AssociatedConnUserName>
+          <FullPath>128 (2) Фирма вторсырья.sql</FullPath>
+        </FileNode>
+        <FileNode Name="13 (1) Компьютерная фирма.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>13 (1) Компьютерная фирма.sql</FullPath>
+        </FileNode>
+        <FileNode Name="136 (2) Аэрофлот.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ms-sql-8.in-solve.ru:False:1gb_miskevich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ms-sql-8.in-solve.ru</AssociatedConnSrvName>
+          <AssociatedConnUserName>1gb_miskevich</AssociatedConnUserName>
+          <FullPath>136 (2) Аэрофлот.sql</FullPath>
+        </FileNode>
+        <FileNode Name="14 (1) Корабли.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>14 (1) Корабли.sql</FullPath>
+        </FileNode>
+        <FileNode Name="15 (1) Компьютерная фирма.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>15 (1) Компьютерная фирма.sql</FullPath>
+        </FileNode>
+        <FileNode Name="16 (2) Компьютерная фирма.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>16 (2) Компьютерная фирма.sql</FullPath>
+        </FileNode>
+        <FileNode Name="17 (2) Компьютерная фирма.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>17 (2) Компьютерная фирма.sql</FullPath>
+        </FileNode>
+        <FileNode Name="18 (2) Компьютерная фирма.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>18 (2) Компьютерная фирма.sql</FullPath>
+        </FileNode>
+        <FileNode Name="19 (1) Компьютерная фирма.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>19 (1) Компьютерная фирма.sql</FullPath>
+        </FileNode>
+        <FileNode Name="2 (1) Компьютерная фирма.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>2 (1) Компьютерная фирма.sql</FullPath>
+        </FileNode>
+        <FileNode Name="20 (1) Компьютерная фирма.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ms-sql-8.in-solve.ru:False:1gb_miskevich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ms-sql-8.in-solve.ru</AssociatedConnSrvName>
+          <AssociatedConnUserName>1gb_miskevich</AssociatedConnUserName>
+          <FullPath>20 (1) Компьютерная фирма.sql</FullPath>
+        </FileNode>
+        <FileNode Name="25 (2) Компьютерная фирма.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ms-sql-8.in-solve.ru:False:1gb_miskevich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ms-sql-8.in-solve.ru</AssociatedConnSrvName>
+          <AssociatedConnUserName>1gb_miskevich</AssociatedConnUserName>
+          <FullPath>25 (2) Компьютерная фирма.sql</FullPath>
+        </FileNode>
+        <FileNode Name="26 (2) Компьютерная фирма.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>26 (2) Компьютерная фирма.sql</FullPath>
+        </FileNode>
+        <FileNode Name="27 (2) Компьютерная фирма.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>27 (2) Компьютерная фирма.sql</FullPath>
+        </FileNode>
+        <FileNode Name="28 (1) Компьютерная фирма.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ms-sql-8.in-solve.ru:False:1gb_miskevich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ms-sql-8.in-solve.ru</AssociatedConnSrvName>
+          <AssociatedConnUserName>1gb_miskevich</AssociatedConnUserName>
+          <FullPath>28 (1) Компьютерная фирма.sql</FullPath>
+        </FileNode>
+        <FileNode Name="29 (2) Фирма вторсырья.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ms-sql-8.in-solve.ru:False:1gb_miskevich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ms-sql-8.in-solve.ru</AssociatedConnSrvName>
+          <AssociatedConnUserName>1gb_miskevich</AssociatedConnUserName>
+          <FullPath>29 (2) Фирма вторсырья.sql</FullPath>
+        </FileNode>
+        <FileNode Name="3 (1) Компьютерная фирма.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>3 (1) Компьютерная фирма.sql</FullPath>
+        </FileNode>
+        <FileNode Name="30 (2) Фирма вторсырья.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ms-sql-8.in-solve.ru:False:1gb_miskevich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ms-sql-8.in-solve.ru</AssociatedConnSrvName>
+          <AssociatedConnUserName>1gb_miskevich</AssociatedConnUserName>
+          <FullPath>30 (2) Фирма вторсырья.sql</FullPath>
+        </FileNode>
+        <FileNode Name="31 (1) Корабли.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ms-sql-8.in-solve.ru:False:1gb_miskevich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ms-sql-8.in-solve.ru</AssociatedConnSrvName>
+          <AssociatedConnUserName>1gb_miskevich</AssociatedConnUserName>
+          <FullPath>31 (1) Корабли.sql</FullPath>
+        </FileNode>
+        <FileNode Name="32 (3) Корабли.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ms-sql-8.in-solve.ru:False:1gb_miskevich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ms-sql-8.in-solve.ru</AssociatedConnSrvName>
+          <AssociatedConnUserName>1gb_miskevich</AssociatedConnUserName>
+          <FullPath>32 (3) Корабли.sql</FullPath>
+        </FileNode>
+        <FileNode Name="33 (1) Корабли.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ms-sql-8.in-solve.ru:False:1gb_miskevich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ms-sql-8.in-solve.ru</AssociatedConnSrvName>
+          <AssociatedConnUserName>1gb_miskevich</AssociatedConnUserName>
+          <FullPath>33 (1) Корабли.sql</FullPath>
+        </FileNode>
+        <FileNode Name="34 (2) Корабли.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ms-sql-8.in-solve.ru:False:1gb_miskevich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ms-sql-8.in-solve.ru</AssociatedConnSrvName>
+          <AssociatedConnUserName>1gb_miskevich</AssociatedConnUserName>
+          <FullPath>34 (2) Корабли.sql</FullPath>
+        </FileNode>
+        <FileNode Name="35 (2) Компьютерная фирма.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ms-sql-8.in-solve.ru:False:1gb_miskevich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ms-sql-8.in-solve.ru</AssociatedConnSrvName>
+          <AssociatedConnUserName>1gb_miskevich</AssociatedConnUserName>
+          <FullPath>35 (2) Компьютерная фирма.sql</FullPath>
+        </FileNode>
+        <FileNode Name="36 (1) Корабли.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ms-sql-8.in-solve.ru:False:1gb_miskevich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ms-sql-8.in-solve.ru</AssociatedConnSrvName>
+          <AssociatedConnUserName>1gb_miskevich</AssociatedConnUserName>
+          <FullPath>36 (1) Корабли.sql</FullPath>
+        </FileNode>
+        <FileNode Name="37 (2) Корабли.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ms-sql-8.in-solve.ru:False:1gb_miskevich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ms-sql-8.in-solve.ru</AssociatedConnSrvName>
+          <AssociatedConnUserName>1gb_miskevich</AssociatedConnUserName>
+          <FullPath>37 (2) Корабли.sql</FullPath>
+        </FileNode>
+        <FileNode Name="38 (1) Корабли.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ms-sql-8.in-solve.ru:False:1gb_miskevich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ms-sql-8.in-solve.ru</AssociatedConnSrvName>
+          <AssociatedConnUserName>1gb_miskevich</AssociatedConnUserName>
+          <FullPath>38 (1) Корабли.sql</FullPath>
+        </FileNode>
+        <FileNode Name="39 (2) Корабли.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ms-sql-8.in-solve.ru:False:1gb_miskevich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ms-sql-8.in-solve.ru</AssociatedConnSrvName>
+          <AssociatedConnUserName>1gb_miskevich</AssociatedConnUserName>
+          <FullPath>39 (2) Корабли.sql</FullPath>
+        </FileNode>
+        <FileNode Name="4 (1) Компьютерная фирма.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>4 (1) Компьютерная фирма.sql</FullPath>
+        </FileNode>
+        <FileNode Name="40 (2) Компьютерная фирма.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ms-sql-8.in-solve.ru:False:1gb_miskevich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ms-sql-8.in-solve.ru</AssociatedConnSrvName>
+          <AssociatedConnUserName>1gb_miskevich</AssociatedConnUserName>
+          <FullPath>40 (2) Компьютерная фирма.sql</FullPath>
+        </FileNode>
+        <FileNode Name="41 (2) Компьютерная фирма.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ms-sql-8.in-solve.ru:False:1gb_miskevich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ms-sql-8.in-solve.ru</AssociatedConnSrvName>
+          <AssociatedConnUserName>1gb_miskevich</AssociatedConnUserName>
+          <FullPath>41 (2) Компьютерная фирма.sql</FullPath>
+        </FileNode>
+        <FileNode Name="42 (1) Корабли.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ms-sql-8.in-solve.ru:False:1gb_miskevich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ms-sql-8.in-solve.ru</AssociatedConnSrvName>
+          <AssociatedConnUserName>1gb_miskevich</AssociatedConnUserName>
+          <FullPath>42 (1) Корабли.sql</FullPath>
+        </FileNode>
+        <FileNode Name="43 (2) Корабли.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ms-sql-8.in-solve.ru:False:1gb_miskevich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ms-sql-8.in-solve.ru</AssociatedConnSrvName>
+          <AssociatedConnUserName>1gb_miskevich</AssociatedConnUserName>
+          <FullPath>43 (2) Корабли.sql</FullPath>
+        </FileNode>
+        <FileNode Name="44 (1) Корабли.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ms-sql-8.in-solve.ru:False:1gb_miskevich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ms-sql-8.in-solve.ru</AssociatedConnSrvName>
+          <AssociatedConnUserName>1gb_miskevich</AssociatedConnUserName>
+          <FullPath>44 (1) Корабли.sql</FullPath>
+        </FileNode>
+        <FileNode Name="45 (1) Корабли.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ms-sql-8.in-solve.ru:False:1gb_miskevich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ms-sql-8.in-solve.ru</AssociatedConnSrvName>
+          <AssociatedConnUserName>1gb_miskevich</AssociatedConnUserName>
+          <FullPath>45 (1) Корабли.sql</FullPath>
+        </FileNode>
+        <FileNode Name="46 (2) Корабли.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ms-sql-8.in-solve.ru:False:1gb_miskevich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ms-sql-8.in-solve.ru</AssociatedConnSrvName>
+          <AssociatedConnUserName>1gb_miskevich</AssociatedConnUserName>
+          <FullPath>46 (2) Корабли.sql</FullPath>
+        </FileNode>
+        <FileNode Name="47 (4) Корабли.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ms-sql-8.in-solve.ru:False:1gb_miskevich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ms-sql-8.in-solve.ru</AssociatedConnSrvName>
+          <AssociatedConnUserName>1gb_miskevich</AssociatedConnUserName>
+          <FullPath>47 (4) Корабли.sql</FullPath>
+        </FileNode>
+        <FileNode Name="48 (1) Корабли.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ms-sql-8.in-solve.ru:False:1gb_miskevich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ms-sql-8.in-solve.ru</AssociatedConnSrvName>
+          <AssociatedConnUserName>1gb_miskevich</AssociatedConnUserName>
+          <FullPath>48 (1) Корабли.sql</FullPath>
+        </FileNode>
+        <FileNode Name="49 (1) Корабли.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ms-sql-8.in-solve.ru:False:1gb_miskevich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ms-sql-8.in-solve.ru</AssociatedConnSrvName>
+          <AssociatedConnUserName>1gb_miskevich</AssociatedConnUserName>
+          <FullPath>49 (1) Корабли.sql</FullPath>
+        </FileNode>
+        <FileNode Name="5 (1) Компьютерная фирма.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>5 (1) Компьютерная фирма.sql</FullPath>
+        </FileNode>
+        <FileNode Name="50 (1) Корабли.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ms-sql-8.in-solve.ru:False:1gb_miskevich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ms-sql-8.in-solve.ru</AssociatedConnSrvName>
+          <AssociatedConnUserName>1gb_miskevich</AssociatedConnUserName>
+          <FullPath>50 (1) Корабли.sql</FullPath>
+        </FileNode>
+        <FileNode Name="51 (2) Корабли.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>51 (2) Корабли.sql</FullPath>
+        </FileNode>
+        <FileNode Name="52 (2) Корабли.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>52 (2) Корабли.sql</FullPath>
+        </FileNode>
+        <FileNode Name="53 (1) Корабли.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>53 (1) Корабли.sql</FullPath>
+        </FileNode>
+        <FileNode Name="54 (2) Корабли.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>54 (2) Корабли.sql</FullPath>
+        </FileNode>
+        <FileNode Name="55 (1) Корабли.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>55 (1) Корабли.sql</FullPath>
+        </FileNode>
+        <FileNode Name="56 (2) Корабли.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>56 (2) Корабли.sql</FullPath>
+        </FileNode>
+        <FileNode Name="57 (2) Корабли.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>57 (2) Корабли.sql</FullPath>
+        </FileNode>
+        <FileNode Name="58 (2) Компьютерная фирма.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>58 (2) Компьютерная фирма.sql</FullPath>
+        </FileNode>
+        <FileNode Name="59 (2) Фирма вторсырья.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>59 (2) Фирма вторсырья.sql</FullPath>
+        </FileNode>
+        <FileNode Name="6 (2) Компьютерная фирма.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>6 (2) Компьютерная фирма.sql</FullPath>
+        </FileNode>
+        <FileNode Name="60 (2) Фирма вторсырья.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>60 (2) Фирма вторсырья.sql</FullPath>
+        </FileNode>
+        <FileNode Name="61 (1) Фирма вторсырья.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>61 (1) Фирма вторсырья.sql</FullPath>
+        </FileNode>
+        <FileNode Name="62 (1) Фирма вторсырья.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>62 (1) Фирма вторсырья.sql</FullPath>
+        </FileNode>
+        <FileNode Name="63 (2) Аэрофлот.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>63 (2) Аэрофлот.sql</FullPath>
+        </FileNode>
+        <FileNode Name="64 (2) Фирма вторсырья.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>64 (2) Фирма вторсырья.sql</FullPath>
+        </FileNode>
+        <FileNode Name="65 (3) Компьютерная фирма.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>65 (3) Компьютерная фирма.sql</FullPath>
+        </FileNode>
+        <FileNode Name="66 (2) Корабли.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>66 (2) Корабли.sql</FullPath>
+        </FileNode>
+        <FileNode Name="67 (2) Аэрофлот.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>67 (2) Аэрофлот.sql</FullPath>
+        </FileNode>
+        <FileNode Name="68 (2) Аэрофлот.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>68 (2) Аэрофлот.sql</FullPath>
+        </FileNode>
+        <FileNode Name="69 (3) Фирма вторсырья.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>69 (3) Фирма вторсырья.sql</FullPath>
+        </FileNode>
+        <FileNode Name="7 (2) Компьютерная фирма.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>7 (2) Компьютерная фирма.sql</FullPath>
+        </FileNode>
+        <FileNode Name="70 (2) Корабли.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>70 (2) Корабли.sql</FullPath>
+        </FileNode>
+        <FileNode Name="71 (2) Компьютерная фирма.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>71 (2) Компьютерная фирма.sql</FullPath>
+        </FileNode>
+        <FileNode Name="72 (2) Аэрофлот.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>72 (2) Аэрофлот.sql</FullPath>
+        </FileNode>
+        <FileNode Name="73 (2) Корабли.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>73 (2) Корабли.sql</FullPath>
+        </FileNode>
+        <FileNode Name="74 (2) Корабли.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>74 (2) Корабли.sql</FullPath>
+        </FileNode>
+        <FileNode Name="75 (2) Компьютерная фирма.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ms-sql-8.in-solve.ru:False:1gb_miskevich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ms-sql-8.in-solve.ru</AssociatedConnSrvName>
+          <AssociatedConnUserName>1gb_miskevich</AssociatedConnUserName>
+          <FullPath>75 (2) Компьютерная фирма.sql</FullPath>
+        </FileNode>
+        <FileNode Name="76 (2) Аэрофлот.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>76 (2) Аэрофлот.sql</FullPath>
+        </FileNode>
+        <FileNode Name="77 (2) Аэрофлот.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>77 (2) Аэрофлот.sql</FullPath>
+        </FileNode>
+        <FileNode Name="78 (2) Корабли.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>78 (2) Корабли.sql</FullPath>
+        </FileNode>
+        <FileNode Name="79 (2) Аэрофлот.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>79 (2) Аэрофлот.sql</FullPath>
+        </FileNode>
+        <FileNode Name="8 (2) Компьютерная фирма.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>8 (2) Компьютерная фирма.sql</FullPath>
+        </FileNode>
+        <FileNode Name="80 (1) Компьютерная фирма.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>80 (1) Компьютерная фирма.sql</FullPath>
+        </FileNode>
+        <FileNode Name="81 (2) Фирма вторсырья.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>81 (2) Фирма вторсырья.sql</FullPath>
+        </FileNode>
+        <FileNode Name="82 (2) Компьютерная фирма.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>82 (2) Компьютерная фирма.sql</FullPath>
+        </FileNode>
+        <FileNode Name="83 (2) Корабли.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>83 (2) Корабли.sql</FullPath>
+        </FileNode>
+        <FileNode Name="84 (2) Аэрофлот.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>84 (2) Аэрофлот.sql</FullPath>
+        </FileNode>
+        <FileNode Name="85 (2) Компьютерная фирма.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>85 (2) Компьютерная фирма.sql</FullPath>
+        </FileNode>
+        <FileNode Name="86 (2) Компьютерная фирма.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>86 (2) Компьютерная фирма.sql</FullPath>
+        </FileNode>
+        <FileNode Name="87 (2) Аэрофлот.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ms-sql-8.in-solve.ru:False:1gb_miskevich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ms-sql-8.in-solve.ru</AssociatedConnSrvName>
+          <AssociatedConnUserName>1gb_miskevich</AssociatedConnUserName>
+          <FullPath>87 (2) Аэрофлот.sql</FullPath>
+        </FileNode>
+        <FileNode Name="88 (2) Аэрофлот.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ms-sql-8.in-solve.ru:False:1gb_miskevich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ms-sql-8.in-solve.ru</AssociatedConnSrvName>
+          <AssociatedConnUserName>1gb_miskevich</AssociatedConnUserName>
+          <FullPath>88 (2) Аэрофлот.sql</FullPath>
+        </FileNode>
+        <FileNode Name="89 (2) Компьютерная фирма.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>89 (2) Компьютерная фирма.sql</FullPath>
+        </FileNode>
+        <FileNode Name="9 (1) Компьютерная фирма.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>9 (1) Компьютерная фирма.sql</FullPath>
+        </FileNode>
+        <FileNode Name="21 (1) Компьютерная фирма.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ms-sql-8.in-solve.ru:False:1gb_miskevich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ms-sql-8.in-solve.ru</AssociatedConnSrvName>
+          <AssociatedConnUserName>1gb_miskevich</AssociatedConnUserName>
+          <FullPath>21 (1) Компьютерная фирма.sql</FullPath>
+        </FileNode>
+        <FileNode Name="22 (1) Компьютерная фирма.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ms-sql-8.in-solve.ru:False:1gb_miskevich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ms-sql-8.in-solve.ru</AssociatedConnSrvName>
+          <AssociatedConnUserName>1gb_miskevich</AssociatedConnUserName>
+          <FullPath>22 (1) Компьютерная фирма.sql</FullPath>
+        </FileNode>
+        <FileNode Name="23 (1) Компьютерная фирма.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ms-sql-8.in-solve.ru:False:1gb_miskevich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ms-sql-8.in-solve.ru</AssociatedConnSrvName>
+          <AssociatedConnUserName>1gb_miskevich</AssociatedConnUserName>
+          <FullPath>23 (1) Компьютерная фирма.sql</FullPath>
+        </FileNode>
+        <FileNode Name="24 (2) Компьютерная фирма.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ms-sql-8.in-solve.ru:False:1gb_miskevich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ms-sql-8.in-solve.ru</AssociatedConnSrvName>
+          <AssociatedConnUserName>1gb_miskevich</AssociatedConnUserName>
+          <FullPath>24 (2) Компьютерная фирма.sql</FullPath>
+        </FileNode>
+        <FileNode Name="90 (2) Компьютерная фирма.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ms-sql-8.in-solve.ru:False:1gb_miskevich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ms-sql-8.in-solve.ru</AssociatedConnSrvName>
+          <AssociatedConnUserName>1gb_miskevich</AssociatedConnUserName>
+          <FullPath>90 (2) Компьютерная фирма.sql</FullPath>
+        </FileNode>
+        <FileNode Name="91 (2) Окраска.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ms-sql-8.in-solve.ru:False:1gb_miskevich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ms-sql-8.in-solve.ru</AssociatedConnSrvName>
+          <AssociatedConnUserName>1gb_miskevich</AssociatedConnUserName>
+          <FullPath>91 (2) Окраска.sql</FullPath>
+        </FileNode>
+        <FileNode Name="92 (2) Окраска.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ms-sql-8.in-solve.ru:False:1gb_miskevich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ms-sql-8.in-solve.ru</AssociatedConnSrvName>
+          <AssociatedConnUserName>1gb_miskevich</AssociatedConnUserName>
+          <FullPath>92 (2) Окраска.sql</FullPath>
+        </FileNode>
+        <FileNode Name="93 (2) Аэрофлот.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ms-sql-8.in-solve.ru:False:1gb_miskevich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ms-sql-8.in-solve.ru</AssociatedConnSrvName>
+          <AssociatedConnUserName>1gb_miskevich</AssociatedConnUserName>
+          <FullPath>93 (2) Аэрофлот.sql</FullPath>
+        </FileNode>
+        <FileNode Name="94 (2) Аэрофлот.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ms-sql-8.in-solve.ru:False:1gb_miskevich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ms-sql-8.in-solve.ru</AssociatedConnSrvName>
+          <AssociatedConnUserName>1gb_miskevich</AssociatedConnUserName>
+          <FullPath>94 (2) Аэрофлот.sql</FullPath>
+        </FileNode>
+        <FileNode Name="95 (2) Аэрофлот.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ms-sql-8.in-solve.ru:False:1gb_miskevich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ms-sql-8.in-solve.ru</AssociatedConnSrvName>
+          <AssociatedConnUserName>1gb_miskevich</AssociatedConnUserName>
+          <FullPath>95 (2) Аэрофлот.sql</FullPath>
+        </FileNode>
+        <FileNode Name="96 (2) Окраска.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ms-sql-8.in-solve.ru:False:1gb_miskevich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ms-sql-8.in-solve.ru</AssociatedConnSrvName>
+          <AssociatedConnUserName>1gb_miskevich</AssociatedConnUserName>
+          <FullPath>96 (2) Окраска.sql</FullPath>
+        </FileNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Miscellaneous" Type="3" Sorted="true">
+      <Items />
+    </LogicalFolder>
+  </Items>
+</SqlWorkbenchSqlProject>
