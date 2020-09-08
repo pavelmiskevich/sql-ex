@@ -58,4 +58,4 @@ where nb.next_battle IS NOT NULL
 -- GIT HUB
 
 --FORUM
---https://www.sql-ex.ru/forum/forum.php?F=2&N=18#19
+--https://www.sql-ex.ru/forum/forum.php?F=2&N=19
