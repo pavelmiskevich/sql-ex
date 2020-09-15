@@ -163,6 +163,12 @@
           <AssociatedConnUserName />
           <FullPath>14 (1) Корабли.sql</FullPath>
         </FileNode>
+        <FileNode Name="146 (2) Компьютерная фирма.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ms-sql-8.in-solve.ru:False:1gb_miskevich</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ms-sql-8.in-solve.ru</AssociatedConnSrvName>
+          <AssociatedConnUserName>1gb_miskevich</AssociatedConnUserName>
+          <FullPath>146 (2) Компьютерная фирма.sql</FullPath>
+        </FileNode>
         <FileNode Name="15 (1) Компьютерная фирма.sql">
           <AssociatedConnectionMoniker />
           <AssociatedConnSrvName />
